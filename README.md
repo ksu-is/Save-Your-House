@@ -6,4 +6,7 @@ This is a word guessing python game where the player will be playing against the
   /        \
   |        | 
   |  |__|  |
-  
+
+Source: 
+[](https://www.youtube.com/watch?v=m4nEnsavl6w)
+[]https://github.com/kiteco/python-youtube-code/tree/master/build-hangman-in-python 
