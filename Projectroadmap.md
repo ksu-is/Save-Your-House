@@ -1,1 +1,6 @@
-TBD :)
+#Sprint 1 Steps
+- [x] Assign Owner/Maintainer role to each team member
+- [x] Create a README.md file
+- [x] Create a projectroadmap.md file
+- [ ] Commit changes to README.md
+- [ ] Commit changes to projectroadmap.md
