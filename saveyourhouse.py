@@ -10,20 +10,37 @@ root.title("Save Your House")
 
 #Gui components
 
+#displays the house picture
 house_label = tk.Label(root,text="")
 house_label.pack()
 
+#displays blanks
 word.label=tk.Label(root, text= "")
 word_label.pack()
 
+# displays player input
 guess_entry = tk.Entry(root)
 guess_entry.pack()
 
+#for players to guess a letter
 guess_button= tk. Button(root,text="Guess", command=make_guess)
 guess_button.pack()
 
+#displays game status
 status_label = tk.Label(root,text="")
 status_label.pack()
+
+#displays tries remaining
+tries_remain = tk.Label(root,text="")
+tries_remain.pack()
+
+#player can request a hint
+hint_request = tk.Label(root,text="")
+hint_request.pack()
+
+#hint category is displayed
+hint = tk.Label(root,text="")
+hint.pack()
 
 def get_word():
     word =random.choice(word_list)

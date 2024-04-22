@@ -19,6 +19,8 @@
 -[]Reserach how to use Tkinter GUI to replace houses
 -[]Implement Tkinter GUI logic and get GUI up and running
 -[]Design GUI
+-[]Create categories list
+-[]Implement hint logic 
 
 
 
