@@ -1,6 +1,29 @@
-#import words from wordlist.py 
+
+#import words from wordlist.py and import tkinter
+import tkinter as tk
 import random
 from wordlist import word_list
+
+#main app window 
+root = tk.Tk()
+root.title("Save Your House")
+
+#Gui components
+
+house_label = tk.Label(root,text="")
+house_label.pack()
+
+word.label=tk.Label(root, text= "")
+word_label.pack()
+
+guess_entry = tk.Entry(root)
+guess_entry.pack()
+
+guess_button= tk. Button(root,text="Guess", command=make_guess)
+guess_button.pack()
+
+status_label = tk.Label(root,text="")
+status_label.pack()
 
 def get_word():
     word =random.choice(word_list)
@@ -17,7 +40,7 @@ def play(word):
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("Please guess a letter or word: ")
+        guess = input("Please guess a letter : ")
         guess = guess.upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
