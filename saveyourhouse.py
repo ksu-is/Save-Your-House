@@ -2,21 +2,20 @@
 import random
 from wordlist import word_list
 
-def pick_word():
+def get_word():
     word =random.choice(word_list)
     return word.upper()
 
-def game(word):
-    word_complete = "_" * len(word)
-    guessed= False 
+def play(word):
+    word_completion = "_" * len(word)
+    guessed = False
     guessed_letters = []
     guessed_words = []
-    tries = 7
-    print(" Hurry! Play to Save Your House!")
+    tries = 6
+    print("Let's play Hangman!")
     print(display_house(tries))
-    print(word_complete)
+    print(word_completion)
     print("\n")
-
     while not guessed and tries > 0:
         guess = input("Please guess a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
@@ -58,7 +57,7 @@ def game(word):
 
 
 def display_house(tries):
-    stages = [  #roof sliding off, top two only
+    stages = [  # roof sliding off, first tier
                 """
       /\
     /    \
@@ -66,7 +65,7 @@ def display_house(tries):
   |        | 
   |  |__|  |
                 """,
-                # second tier slides off, next two
+                # second tier disappears
                 """
       /\
     /    \
@@ -82,7 +81,7 @@ def display_house(tries):
   |        | 
   |  |__|  |
                 """,
-                # top of left wall falls, only one character missing
+                # top left wall gone
                 """
       /\
     /    \
@@ -90,7 +89,7 @@ def display_house(tries):
   |        | 
   |  |__|  |
                 """,
-                # top of right wall falls, only one character missing
+                # top right wall gone
                 """
       /\
     /    \
@@ -98,7 +97,7 @@ def display_house(tries):
   |        | 
   |  |__|  |
                 """,
-                # bottom of left wall falls
+                # bottom left wall gone
                 """
       /\
     /    \
@@ -106,7 +105,7 @@ def display_house(tries):
   |        | 
   |  |__|  |
                 """,
-                # bottom of right wall falls
+                # bottom right wall gone
                 """
       /\
     /    \
@@ -118,6 +117,7 @@ def display_house(tries):
     return stages[tries]
 
 
+def main():
     word = get_word()
     play(word)
     while input("Play Again? (Y/N) ").upper() == "Y":
@@ -125,4 +125,12 @@ def display_house(tries):
         play(word)
 
 
+if __name__ == "__main__":
+    main()
 
+
+      /\
+    /    \
+  /        \
+  |        | 
+  |  |__|  |
