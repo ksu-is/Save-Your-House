@@ -8,7 +8,10 @@
 -#Sprint 2 Steps 
 
 -[x] Learned how to update changes made on VS code to our repository on ksu-is online
--[]Create Wordlist.py for Saveyourhouse.py
+-[x]Create the  Wordlist.py for Saveyourhouse.py using ai to generate word list, then used python command to delete any potential duplicates 
+-[x] Changed code to allow users to input  Uppercase or lowercase guesses 
+-[x] start attempt to intergrate GUI into our game and Imported tkinter 
+
 
 
 
