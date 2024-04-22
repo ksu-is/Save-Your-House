@@ -12,7 +12,7 @@ def play(word):
     guessed_letters = []
     guessed_words = []
     tries = 6
-    print("Let's play Hangman!")
+    print("Hurry! You need to guess the word to save your house!")
     print(display_house(tries))
     print(word_completion)
     print("\n")
@@ -57,55 +57,50 @@ def play(word):
 
 
 def display_house(tries):
-    stages = [  # roof sliding off, first tier
+    stages = [  # final house
                 """
-      /\
+    
+       
+          
+           
+     
+                """,
+                # right wall gone
+                """
+    
+  
+           
+    |__|  
+                """,
+                # left wall gone
+                """
+
+          | 
+    |__|  |
+                """,
+                # third tier gone
+                """
+
+  |        | 
+  |  |__|  |
+                """,
+                # second tier gone
+                """
+      
+    
+  /        \
+  |        | 
+  |  |__|  |
+                """,
+                # roof/first tier gone
+                """
+     
     /    \
   /        \
   |        | 
   |  |__|  |
                 """,
-                # second tier disappears
-                """
-      /\
-    /    \
-  /        \
-  |        | 
-  |  |__|  |
-                """,
-                # third tier
-                """
-      /\
-    /    \
-  /        \
-  |        | 
-  |  |__|  |
-                """,
-                # top left wall gone
-                """
-      /\
-    /    \
-  /        \
-  |        | 
-  |  |__|  |
-                """,
-                # top right wall gone
-                """
-      /\
-    /    \
-  /        \
-  |        | 
-  |  |__|  |
-                """,
-                # bottom left wall gone
-                """
-      /\
-    /    \
-  /        \
-  |        | 
-  |  |__|  |
-                """,
-                # bottom right wall gone
+                # full house
                 """
       /\
     /    \
@@ -127,10 +122,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-      /\
-    /    \
-  /        \
-  |        | 
-  |  |__|  |
