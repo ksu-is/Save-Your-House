@@ -17,7 +17,8 @@ def play(word):
     print(word_completion)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("Please guess a letter or word: ").upper()
+        guess = input("Please guess a letter or word: ")
+        guess = guess.upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
@@ -36,6 +37,7 @@ def play(word):
                 if "_" not in word_completion:
                     guessed = True
         elif len(guess) == len(word) and guess.isalpha():
+            guess = guess.upper()
             if guess in guessed_words:
                 print("You already guessed the word", guess)
             elif guess != word:
