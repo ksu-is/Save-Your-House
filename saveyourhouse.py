@@ -1,11 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-#test#123
-#testagain
->>>>>>> 140534a045eec11e78c2eafd6864cef302ecbc67
-#test 3
-=======
 #import words from wordlist.py 
 import random
 from wordlist import word_list
