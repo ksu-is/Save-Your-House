@@ -153,6 +153,20 @@ def display_house(tries):
     ]
     return stages[tries]
 
+word = get(word)
+
+def initialize_game():
+    global word, word_completion, guessed_letters, guessed_words, tries_remain
+    word = get_word()
+    word_completion = "_"*len(word)
+    guessed_letters = []
+    guessed_words = []
+    tries = 6
+    update_display()
+
+def make_guess():
+    global word, word_completion, guesed_letters, guessed_words, tries
+    guess = guess_entry.get().upper()
 
 def main():
     word = get_word()
@@ -164,5 +178,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-#comment
