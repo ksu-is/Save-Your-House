@@ -4,43 +4,58 @@ import tkinter as tk
 import random
 from wordlist import word_list
 
+#add house art
+
+def choose_word():
+    return random.choice(word_list)
+
+def update_house(tries):
+    house_label.config(text=house_art[tries])
+
 #main app window 
 root = tk.Tk()
 root.title("Save Your House")
 
+word = ""
+word_completion = ""
+guessed_letters = []
+guessed_words = []
+tries = 6
+
 #Gui components
 
 #displays the house picture
-house_label = tk.Label(root,text="")
-house_label.pack()
+house_label = tk.Label(root,font=("Times New Roman", 12))
+house_label.grid(row=0, column=0)
 
 #displays blanks
-word.label=tk.Label(root, text= "")
-word_label.pack()
+word = choose_word()
+word_label=tk.Label(root, text= "_"*len(word), font=("Times New Roman", 16))
+word_label.grid(row=1, column=0)
 
 # displays player input
-guess_entry = tk.Entry(root)
-guess_entry.pack()
+guess_entry = tk.Entry(root, width=3, font=("Times New Roman", 16))
+guess_entry.grid(row=2, column=0)
 
 #for players to guess a letter
-guess_button= tk. Button(root,text="Guess", command=make_guess)
-guess_button.pack()
+guess_button= tk.Button(root, text="Guess")
+guess_button.grid(row=2, column=1)
 
 #displays game status
-status_label = tk.Label(root,text="")
-status_label.pack()
+status_label = tk.Label(root, font=("Times New Roman", 16))
+status_label.grid(row=3, column=0)
 
-#displays tries remaining
-tries_remain = tk.Label(root,text="")
-tries_remain.pack()
+update_house(tries)
+
+#root.mainloop()
 
 #player can request a hint
-hint_request = tk.Label(root,text="")
-hint_request.pack()
+#hint_request = tk.Label(root,text="")
+#hint_request.pack()
 
 #hint category is displayed
-hint = tk.Label(root,text="")
-hint.pack()
+#hint = tk.Label(root,text="")
+#hint.pack()
 
 def get_word():
     word =random.choice(word_list)
@@ -97,64 +112,6 @@ def play(word):
     else:
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!")
 
-
-def display_house(tries):
-    stages = [  # final house
-                """
-    
-       
-          
-           
-     
-                """,
-                # right wall gone
-                """
-    
-  
-           
-    |__|  
-                """,
-                # left wall gone
-                """
-
-          | 
-    |__|  |
-                """,
-                # third tier gone
-                """
-
-  |        | 
-  |  |__|  |
-                """,
-                # second tier gone
-                """
-      
-    
-  /        \
-  |        | 
-  |  |__|  |
-                """,
-                # roof/first tier gone
-                """
-     
-    /    \
-  /        \
-  |        | 
-  |  |__|  |
-                """,
-                # full house
-                """
-      /\
-    /    \
-  /        \
-  |        | 
-  |  |__|  |
-                """
-    ]
-    return stages[tries]
-
-word = get(word)
-
 def initialize_game():
     global word, word_completion, guessed_letters, guessed_words, tries_remain
     word = get_word()
@@ -162,7 +119,7 @@ def initialize_game():
     guessed_letters = []
     guessed_words = []
     tries = 6
-    update_display()
+    update_house(tries)
 
 def make_guess():
     global word, word_completion, guesed_letters, guessed_words, tries
