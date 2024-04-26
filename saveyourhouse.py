@@ -5,7 +5,50 @@ from wordlist import word_list
 
 #house art filler
 house_art = [
-    "|/|\|"
+"""\
+    /\ 
+   /  \\  
+  /    \\ 
+ /      \\ 
+ |      |  
+ | |_|  |  
+"""
+"""\
+
+   /  \\  
+  /    \\ 
+ /      \\ 
+ |      |  
+ | |_|  |  
+"""
+"""\
+   
+  /    \\ 
+ /      \\ 
+ |      |  
+ | |_|  |  
+"""
+"""\
+    
+ /      \\ 
+ |      |  
+ | |_|  |  
+"""
+"""\
+   
+ |      |  
+ | |_|  |  
+"""
+"""\
+   
+       |  
+  |_|  |  
+"""
+"""\
+   
+         
+  |_|    
+"""
 ]
 
 def choose_word():
@@ -74,5 +117,6 @@ status_label.grid(row=3, column=0)
 #hint category is displayed
 #hint = tk.Label(root,text="")
 #hint.pack()
+
 
 root.mainloop()
