@@ -55,7 +55,10 @@ def choose_word():
     return random.choice(word_list)
 
 def update_house(tries):
-    house_label.config(text=house_art[tries])
+    if tries < len(house_art):
+        house_label.config(text=house_art[tries])
+    else:
+        pass
 
 def check_guess(guess):
     global display_word
@@ -63,7 +66,7 @@ def check_guess(guess):
         for i in range(len(word)):
                 if word[i] == guess:
                      display_word = display_word[:i] + guess + display_word[i+1:]
-                     word_label.config(text=display_word)
+        word_label.config(text=display_word)
         if "_" not in display_word:
             end_game("Lose")
     else:
@@ -89,7 +92,7 @@ root.title("Save Your House")
 #GUI components:
 
 #displays the house picture
-house_label = tk.Label(root,font=("Times New Roman", 12))
+house_label = tk.Label(root,font=("Times New Roman", 12),text=house_art[0])
 house_label.grid(row=0, column=0)
 
 #displays blanks
@@ -117,6 +120,7 @@ status_label.grid(row=3, column=0)
 #hint category is displayed
 #hint = tk.Label(root,text="")
 #hint.pack()
+
 
 
 root.mainloop()
