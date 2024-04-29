@@ -6,7 +6,7 @@ from wordlist import word_list
 #house art filler
 house_art = [
 """\
-    /\ 
+    /\\
    /  \\  
   /    \\ 
  /      \\ 
