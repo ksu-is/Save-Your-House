@@ -60,6 +60,9 @@ def update_house(tries):
     else:
         pass
 
+#def generate_hint():
+    #global word
+    #return hint_list[]
 tries= 0
 
 def check_guess(guess):
