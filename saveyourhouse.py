@@ -60,8 +60,11 @@ def update_house(tries):
     else:
         pass
 
+tries= 0
+
 def check_guess(guess):
     global display_word
+    global tries
     if guess in word:
         for i in range(len(word)):
                 if word[i] == guess:
@@ -70,11 +73,18 @@ def check_guess(guess):
         if "_" not in display_word:
             end_game("Lose")
     else:
-        global tries
         tries += 1
         update_house(tries)
         if tries == 6:
             end_game("Lose")
+
+def handle_guess():
+    guess = guess_entry.get()
+    check_guess(guess)
+    guess_entry.delete(0,tk.END)
+
+
+
 
 def end_game(result):
     if result == "Win!":
@@ -83,7 +93,7 @@ def end_game(result):
         result_text = "You lose!"
         guess_entry.config(state="disabled")
         guess_button.config(state="disabled")
-        status_label.config(text=result_text)
+    status_label.config(text=result_text)
 
 #pop-up window
 root = tk.Tk()
@@ -97,8 +107,8 @@ house_label.grid(row=0, column=0)
 
 #displays blanks
 word = choose_word()
-display_word = "_"* len(word)
-word_label=tk.Label(root, text= "_"*len(word), font=("Times New Roman", 16))
+display_word = " _ "* len(word)
+word_label=tk.Label(root, text= " _ "*len(word), font=("Times New Roman", 16))
 word_label.grid(row=1, column=0)
 
 #displays player input
@@ -106,7 +116,7 @@ guess_entry = tk.Entry(root, width=3, font=("Times New Roman", 16))
 guess_entry.grid(row=2, column=0)
 
 #for players to guess a letter
-guess_button= tk.Button(root, text="Guess")
+guess_button= tk.Button(root, text="Guess",command=handle_guess)
 guess_button.grid(row=2, column=1)
 
 #displays game status
