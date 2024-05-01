@@ -2,6 +2,7 @@
 import tkinter as tk
 import random
 from wordlist import word_list
+from hint import hint_list
 
 #house art filler
 house_art = [
@@ -60,9 +61,11 @@ def update_house(tries):
     else:
         pass
 
-#def generate_hint():
-    #global word
-    #return hint_list[]
+def generate_hint():
+    global word
+    word_hint = hint_list[word]
+    hint.config(text=word_hint)
+
 tries= 0
 
 def check_guess(guess):
@@ -86,14 +89,11 @@ def handle_guess():
     check_guess(guess)
     guess_entry.delete(0,tk.END)
 
-
-
-
 def end_game(result):
     if result == "Win!":
         result_text = "You win!"
     else:
-        result_text = "You lose!"
+        result_text = "You lost your house! The word is {}".format(word)
         guess_entry.config(state="disabled")
         guess_button.config(state="disabled")
     status_label.config(text=result_text)
@@ -110,8 +110,8 @@ house_label.grid(row=0, column=0)
 
 #displays blanks
 word = choose_word()
-display_word = " _ "* len(word)
-word_label=tk.Label(root, text= " _ "*len(word), font=("Times New Roman", 16))
+display_word = "_"* len(word)
+word_label=tk.Label(root, text= "_"*len(word), font=("Times New Roman", 16))
 word_label.grid(row=1, column=0)
 
 #displays player input
@@ -127,13 +127,11 @@ status_label = tk.Label(root, font=("Times New Roman", 16))
 status_label.grid(row=3, column=0)
 
 #player can request a hint
-#hint_request = tk.Label(root,text="")
-#hint_request.pack()
+hint_request = tk.Button(root,text="Request A Hint", command=generate_hint)
+hint_request.grid(row=4, column=0)
 
 #hint category is displayed
-#hint = tk.Label(root,text="")
-#hint.pack()
-
-
+hint = tk.Label(root,text="")
+hint.grid(row=4, column=1)
 
 root.mainloop()
