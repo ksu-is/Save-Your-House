@@ -7,12 +7,12 @@ from hint import hint_list
 #house art filler
 house_art = [
 """\
-    /\\
-   /  \\  
-  /    \\ 
- /      \\ 
- |      |  
- | |_|  |  
+/\\
+   /   \\  
+  /     \\ 
+ /       \\ 
+ |       |  
+ | |_|   |  
 """,
 """\
 
