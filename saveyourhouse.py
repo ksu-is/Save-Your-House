@@ -77,7 +77,7 @@ def check_guess(guess):
                      display_word = display_word[:i] + guess + display_word[i+1:]
         word_label.config(text=display_word)
         if "_" not in display_word:
-            end_game("Lose")
+            end_game("Win!")
     else:
         tries += 1
         update_house(tries)
