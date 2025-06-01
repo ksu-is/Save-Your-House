@@ -66,7 +66,7 @@ def generate_hint():
     word_hint = hint_list[word]
     hint.config(text=word_hint)
 
-tries= 0
+tries = 0 
 
 def check_guess(guess):
     global display_word
